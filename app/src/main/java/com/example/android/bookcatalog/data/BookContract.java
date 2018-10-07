@@ -4,6 +4,9 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+/**
+ * API Contract for the BookCatalog app.
+ */
 public final class BookContract {
 
     public static final String CONTENT_AUTHORITY = "com.example.android.bookcatalog";
@@ -12,18 +15,22 @@ public final class BookContract {
 
     private BookContract() {}
 
+        /**
+         * Inner class that defines constant values for the books database table.
+         * Each entry in the table represents a single book.
+         */
     public static final class BookEntry implements BaseColumns {
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_BOOKS);
 
         /**
-         * The MIME type of the CONTENT_URI for a list of products.
+         * The MIME type of the CONTENT_URI for a list of books.
          */
         public static final String CONTENT_LIST_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_BOOKS;
 
         /**
-         * The MIME type of the CONTENT_URI for a single product.
+         * The MIME type of the CONTENT_URI for a single book.
          */
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_BOOKS;

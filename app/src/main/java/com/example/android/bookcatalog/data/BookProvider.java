@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.android.bookcatalog.data.BookContract.BookEntry;
+
+
 import static android.content.UriMatcher.NO_MATCH;
 
 public class BookProvider extends ContentProvider {
